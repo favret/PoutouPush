@@ -12,7 +12,7 @@ First, you need to install curl with http2 and install swift
 #### Ubuntu
 ``` sh
 # install curl with http2
-sudo apt-get install build-essential nghttp2 libnghttp2-dev 
+sudo apt-get install build-essential nghttp2 libnghttp2-dev
 wget https://curl.haxx.se/download/curl-7.54.0.tar.bz2
 tar -xvjf curl-7.54.0.tar.bz2
 cd curl-7.54.0
@@ -50,7 +50,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/favret/PoutouPush.git", from: "0.0.2")
+        .package(url: "https://github.com/favret/PoutouPush.git", from: "0.0.3")
     ]
     ...
 ```
@@ -84,5 +84,3 @@ let body = GCMPayloadBody(title: "POUTOU", text: "poutou poutou poutouuuuu", bad
 let payload = GCMPayload(body: body, to: "token") //create payload
 gcm.push(payload: payload) //push it. Multiple token => to: ["token1", "token2", "token3"]
 ```
-
-
