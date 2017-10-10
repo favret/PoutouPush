@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/451364c0-f051-4278-9063-6739e24ab61f)](https://codebeat.co/projects/github-com-favret-poutoupush-master)
+
 # PoutouPush
 Swift server side - Kitura - push notification. APNS and GCM
 
