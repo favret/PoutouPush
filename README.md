@@ -3,7 +3,7 @@
 # PoutouPush
 Swift server side push notification. APNS and GCM.
 
-Works on Kitura, not tested on perfect and Vapor, but it should work too.
+Works on Kitura, not tested on Perfect and Vapor, but it should work too.
 
 ## Getting Started
 
