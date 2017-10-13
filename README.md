@@ -57,7 +57,7 @@ let package = Package(
     ...
 ```
 
-### Exemple
+### Example
 
 #### APNS
 ```swift
