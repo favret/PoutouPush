@@ -1,7 +1,7 @@
 [![codebeat badge](https://codebeat.co/badges/451364c0-f051-4278-9063-6739e24ab61f)](https://codebeat.co/projects/github-com-favret-poutoupush-master)
 
 # PoutouPush
-Swift server side push notification. APNS and GCM.
+Swift server side push notification. APNS, GCM and FCM.
 
 Works on Kitura, not tested on Perfect and Vapor, but it should work too.
 
@@ -85,4 +85,17 @@ gcm.push(text: "poutou poutou poutooooouuuuuu", to: "token") // Multiple token =
 let body = GCMPayloadBody(title: "POUTOU", text: "poutou poutou poutouuuuu", badge: 5, sound: "poutou.caf") //create body
 let payload = GCMPayload(body: body, to: "token") //create payload
 gcm.push(payload: payload) //push it. Multiple token => to: ["token1", "token2", "token3"]
+```
+
+#### FCM
+```swift
+let fcm = FCM.init(serverKey: "SERVER_KEY")
+
+# Simple fcm push
+fcm.push(text: "poutou poutou poutooooouuuuuu", to: "token") // Multiple token => to: ["token1", "token2", "token3"]
+
+# Custom fcm push
+let body = FCMPayloadBody(title: "POUTOU", text: "poutou poutou poutouuuuu", badge: 5, sound: "poutou.caf") //create body
+let payload = FCMPayload(body: body, to: "token") //create payload
+fcm.push(payload: payload) //push it. Multiple token => to: ["token1", "token2", "token3"]
 ```
