@@ -52,7 +52,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/favret/PoutouPush.git", from: "0.0.3")
+        .package(url: "https://github.com/favret/PoutouPush.git", from: "0.0.5")
     ]
     ...
 ```
