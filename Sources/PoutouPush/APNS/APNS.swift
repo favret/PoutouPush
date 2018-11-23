@@ -75,11 +75,11 @@ public class APNS {
   }
 
   //MARK: - Push notification
-  public func push(text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to tokens: [String]) {
+  public func push(text: APNSPayloadBodyText, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to tokens: [String]) {
     tokens.forEach { self.push(text: text, badge: badge, sound: sound, extra: extra, to: $0) }
   }
 
-  public func push(text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to token: String) {
+  public func push(text: APNSPayloadBodyText, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to token: String) {
     let body = APNSPayloadBody(text: text, badge: badge, sound: sound, extra: extra)
     let payload = APNSPayload(body: body)
     self.push(payload: payload, to: token)
