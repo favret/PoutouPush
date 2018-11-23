@@ -4,7 +4,7 @@ import Foundation
 /**
 */
 public struct GCMPayload: Codable {
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case body = "notification"
     case token = "to"
   }
@@ -51,7 +51,7 @@ public struct GCMPayloadHeader {
 */
 public struct GCMPayloadBody: Codable {
 
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case badge = "badge"
     case title = "title"
     case text = "text"

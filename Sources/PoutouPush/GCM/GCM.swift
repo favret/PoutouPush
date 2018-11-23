@@ -32,11 +32,11 @@ public class GCM {
     print(stringData)
     print("========")
 
-    let cs = NSString(string:"\(stringData)").utf8String
+    let cs = NSString(string: "\(stringData)").utf8String
     return UnsafeMutablePointer<Int8>(mutating: cs)
   }
 
-  //MARK: - Push notification
+  // MARK: - Push notification
   public func push(title: String, text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to tokens: [String]) {
     tokens.forEach { self.push(title: title, text: text, badge: badge, sound: sound, extra: extra, to: $0) }
   }

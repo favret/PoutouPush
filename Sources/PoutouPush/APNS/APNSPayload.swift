@@ -11,7 +11,7 @@ public enum APNSPriority: Int {
 /**
 */
 public struct APNSPayload: Codable {
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case body = "aps"
   }
 
