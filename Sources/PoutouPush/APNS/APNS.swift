@@ -43,7 +43,7 @@ public class APNS {
       let stringData = String(data: data, encoding: .utf8) else {
       return nil
     }
-    let cs = NSString(string:"\(stringData)").utf8String
+    let cs = NSString(string: "\(stringData)").utf8String
     return UnsafeMutablePointer<Int8>(mutating: cs)
   }
 
@@ -74,12 +74,12 @@ public class APNS {
     return headers
   }
 
-  //MARK: - Push notification
-  public func push(text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to tokens: [String]) {
+  // MARK: - Push notification
+  public func push(text: APNSPayloadBodyText, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to tokens: [String]) {
     tokens.forEach { self.push(text: text, badge: badge, sound: sound, extra: extra, to: $0) }
   }
 
-  public func push(text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to token: String) {
+  public func push(text: APNSPayloadBodyText, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil, to token: String) {
     let body = APNSPayloadBody(text: text, badge: badge, sound: sound, extra: extra)
     let payload = APNSPayload(body: body)
     self.push(payload: payload, to: token)

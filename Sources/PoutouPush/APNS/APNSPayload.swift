@@ -11,7 +11,7 @@ public enum APNSPriority: Int {
 /**
 */
 public struct APNSPayload: Codable {
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case body = "aps"
   }
 
@@ -56,7 +56,7 @@ public struct APNSPayloadHeader {
 */
 public struct APNSPayloadBody: Codable {
 
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case badge = "badge"
     case text = "alert"
     case sound = "sound"
@@ -64,16 +64,22 @@ public struct APNSPayloadBody: Codable {
   }
 
   var badge: Int?
-  var text = ""
+  var text: APNSPayloadBodyText
   var sound: String?
   var extra: [String: String]?
 
-  public init(text: String, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil) {
+  public init(text: APNSPayloadBodyText, badge: Int? = nil, sound: String? = nil, extra: [String: String]? = nil) {
     self.text = text
     self.badge = badge
     self.sound = sound
     self.extra = extra
   }
+}
+
+public struct APNSPayloadBodyText: Codable {
+  var title: String?
+  var subtitle: String?
+  var body: String
 }
 
 // MARK: - Certificate

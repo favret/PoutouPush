@@ -4,7 +4,7 @@ import Foundation
 /**
 */
 public struct FCMPayload: Codable {
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case body = "notification"
     case token = "to"
   }
@@ -51,7 +51,7 @@ public struct FCMPayloadHeader {
 */
 public struct FCMPayloadBody: Codable {
 
-  enum CodingKeys : String, CodingKey {
+  enum CodingKeys: String, CodingKey {
     case badge = "badge"
     case title = "title"
     case text = "text"
